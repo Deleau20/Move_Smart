@@ -1,113 +1,119 @@
-/* Réinitialisation des styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
 * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: url(../img/Bg2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background: #0b2239;
+}
+header .header-left {
+  display: flex;
+  align-items: center;
+}
+header .header-left .logo {
+  width: 140px;
+}
+header .header-left nav {
+  margin-left: 50px;
+}
+header .header-left nav ul {
+  display: flex;
+}
+nav ul li a {
+  display: block;
+  color: #cfd9e0;
+  font-size: 18px;
+  padding: 5px 10px;
+  transition: 0.2s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  color: #4ad295;
+}
+nav .login-signup {
+  display: none;
+}
+header .header-right {
+  display: flex;
+  align-items: center;
+}
+header .login-signup {
+  color: #cfd9e0;
+  font-weight: bold;
+}
+header .login-signup a {
+  display: inline-block;
+  color: #0b2239;
+  background: #4ad295;
+  padding: 5px 12px;
+  border-radius: 5px;
+}
+header .header-right .hamburger {
+  margin-left: 20px;
+  cursor: pointer;
+  display: none;
+}
+header .header-right .hamburger div {
+  width: 30px;
+  height: 2px;
+  margin: 6px 0;
+  background: #fff;
+}
+@media only screen and (max-width: 1000px) {
+  header {
+    padding: 0 20px;
+  }
+  header .header-right .hamburger {
+    display: block;
+  }
+  header .header-left nav {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Overlock SC', cursive;
-    text-decoration: none;
-    list-style: none;
-  }
-  
-  /* Styles généraux */
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Styles pour la barre de navigation */
-  nav {
-    background-color: #005C96;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-  }
-  
-  nav ul li {
-    margin-right: 20px;
-  }
-  
-  nav ul li a {
-    color: wheat;
-    text-decoration: none;
-    font-size: 25px;
-  }
-  
-  /* Styles pour le logo */
-  .logo img {
-    width: 70px;
-    height: 70px;
-  }
-  
-  /* Styles pour le menu burger */
-  .icon {
-    display: none;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Styles pour le menu déroulant */
-  .dropdown-content {
-    display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: #0b2239;
+    padding: 30px;
+    transition: 0.3s;
+    text-align: center;
+    z-index: -1;
   }
-  
-  .dropdown-content a {
-    color: #005C96;
-    padding: 12px 16px;
+  header .header-left nav.active {
+    top: 70px;
+  }
+  header .header-left nav ul {
     display: block;
   }
-  
-  .dropdown-content a:hover{
-    border-bottom: #005C96 2px solid;
-  }
-  
-  .dropdown:hover .dropdown-content {
+}
+@media only screen and (max-width: 500px) {
+  nav .login-signup {
     display: block;
-    border-radius: 4px;
+    margin-top: 20px;
   }
-  
-  /* Styles pour la version responsive */
-  @media screen and (max-width: 600px) {
-    nav ul {
-      display: none;
-    }
-  
-    .icon {
-      display: block;
-    }
-  
-    .responsive ul {
-      display: flex;
-      flex-direction: column;
-      margin: 0;
-      padding: 0;
-    }
-  
-    .responsive li {
-      margin: 10px 0;
-    }
-  
-    .dropdown:hover .dropdown-content {
-      display: block;
-      position: static;
-      box-shadow: none;
-      background-color: transparent;
-    }
-  
-    .dropdown-content a {
-      padding: 10px 16px;
-    }
+  header .header-right .login-signup {
+    display: none;
   }
-  
+}
