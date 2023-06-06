@@ -7,11 +7,12 @@
     <title>Move_Smart</title>
     <link rel="stylesheet" href="../static/css/style.css" />
   </head>
+
   <body>
     <header>
       <div class="header-left">
         <div class="logo">
-          <img src="./logo.png" alt="" />
+          <img src="../static/img/logo3.png" alt="" class="img1" />
         </div>
         <nav>
           <ul>
@@ -19,10 +20,7 @@
               <a href="" class="active">Accueil</a>
             </li>
             <li>
-              <a href="">À propos</a>
-            </li>
-            <li>
-              <a href="">Services</a>
+              <a href="../templates/about.html">À propos</a>
             </li>
             <li>
               <a href="">Contactez-nous</a>
@@ -46,7 +44,18 @@
     </header>
 
     <!-- Contenu de la page -->
-
+    <section class="">
+      <video id="bg-video" autoplay muted loop>
+        <source src="chemin_vers_la_video.mp4" type="video/mp4">
+        <!-- Ajoutez des sources supplémentaires pour les différents formats de vidéo si nécessaire -->
+      </video>      
+      <div class="container">
+        <div class="content1">
+          <p>Nous vous rapprochons des unitées compétantes</p>
+        </div>
+      </div>
+      <div class="contentbtn"><button class="btn">Signaler</button></div>
+    </section>
     <script>
       hamburger = document.querySelector(".hamburger");
       nav = document.querySelector("nav");
