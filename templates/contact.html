@@ -6,25 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Move_Smart</title>
     <link rel="stylesheet" href="../static/css/style.css" />
-    <link rel="stylesheet" href="../static/css/contact.css">
   </head>
 
   <body>
     <header>
       <div class="header-left">
         <div class="logo">
-          <img src="../static/img/logo3.png" alt="" class="img1" />
+          <p><span>Move_</span>Smart</p>
         </div>
         <nav>
           <ul>
             <li>
-              <a href="">Accueil</a>
+              <a href="../templates/index.html">Accueil</a>
             </li>
             <li>
               <a href="../templates/about.html">À propos</a>
             </li>
             <li>
-              <a href="../templates/contact.html" class="active">Contactez-nous</a>
+              <a href="#" class="active">Contactez-nous</a>
             </li>
           </ul>
           <div class="login-signup">
@@ -43,29 +42,6 @@
         </div>
       </div>
     </header>
-
-    <form>
-        <h3>CONTACTEZ NOUS !</h3>
-        <div>
-           <input type="text" id="nom" placeholder="Qui êtes-vous ?"/>
-                <label for="nom">Nom</label>
-        </div>
-        <div>
-           <input type="text" id="prenom" placeholder="Qui êtes-vous ?"/>
-                <label for="prenom">Prénom</label>
-        </div>
-        <div>
-           <input type="text" id="mail" placeholder="Quelle est votre adresse Mail ?"/>
-                <label for="mail">Mail</label>
-        </div>
-        <div>
-           <textarea id="msg"  placeholder="Tapez ici votre message"/></textarea>
-           <label for="msg">Message</label>
-        </div>
-        <input class="button" type="submit" value="Envoyer" />
-     </form>
-       
-       
     <script>
       hamburger = document.querySelector(".hamburger");
       nav = document.querySelector("nav");
@@ -73,7 +49,5 @@
         nav.classList.toggle("active");
       };
     </script>
-
-    <script src="../static/js/contact.js"></script>
   </body>
 </html>

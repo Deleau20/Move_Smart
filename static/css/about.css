@@ -17,14 +17,14 @@ body {
   width: 100%;
 }
 
-img {
-  width: 100%;
+.logo p{
+  color: wheat;
+  font-size: 22px;
 }
 
-.img1 {
-  width: 15rem;
-  height: 9rem;
-  margin-right: 2rem;
+.logo p span{
+  color: #4ad295;
+  font-size: 25px;
 }
 
 header {
@@ -91,154 +91,93 @@ header .header-right .hamburger div {
 
 /* Contenu */
 
-.container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 50vh;
-}
-
-.content1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+section {
+  height: 100vh;
   width: 100%;
+  display: grid;
+  place-items: center;
 }
-
-
-
-.content1 p{
-  color: white;
-  font-size: 4rem; 
-}
-
-
-
-.contentbtn {
-  /* border: #0b2239 solid 2px; */
+.row {
   display: flex;
-  justify-content: center;
-  align-items: center;
-
+  flex-wrap: wrap;
 }
-
-.btn {
-  --color: #4ad295;
-  --color2: #0b2239;
-  padding: 0.8em 1.75em;
-  background-color: transparent;
-  border-radius: 6px;
-  border: 2px solid var(--color);
-  transition: 0.5s;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  z-index: 1;
-  font-weight: 500;
-  font-size: 17px;
-  text-transform: uppercase;
-  color: var(--color);
+.column {
+  width: 100%;
+  padding: 0 1em 1em 1em;
+  text-align: center;
 }
-
-.btn::after,
-.btn::before {
-  content: "";
-  display: block;
+.card {
+  width: 100%;
   height: 100%;
-  width: 100%;
-  transform: skew(90deg) translate(-50%, -50%);
-  position: absolute;
-  inset: 50%;
-  left: 25%;
-  z-index: -1;
-  transition: 0.5s ease-out;
-  background-color: var(--color);
+  padding: 2em 1.5em;
+  background: linear-gradient(#ffffff 50%, #0b2239 50%);
+  background-size: 100% 200%;
+  background-position: 0 2.5%;
+  border-radius: 5px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: 0.5s;
 }
 
-.btn::before {
-  top: -50%;
-  left: -25%;
-  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+h2{
+  color: whitesmoke;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 1em;
 }
 
-.btn:hover::before {
-  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f194c;
+  margin: 1em 0;
 }
-
-.btn:hover::after {
-  transform: skew(45deg) translate(-50%, -50%);
+p {
+  color: #575a7b;
+  font-size: 15px;
+  line-height: 1.6;
 }
-
-.btn:hover {
-  color: var(--color2);
+.icon-wrapper {
+  background-color: #0b2239;
+  position: relative;
+  margin: auto;
+  font-size: 30px;
+  height: 2.5em;
+  width: 2.5em;
+  color: #4ad295;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: 0.5s;
 }
-
-.btn:active {
-  filter: brightness(0.7);
-  transform: scale(0.98);
+.card:hover {
+  background-position: 0 100%;
 }
-
-@media only screen and (max-width: 1000px) {
-  header {
-    padding: 0 20px;
-  }
-  header .header-right .hamburger {
-    display: block;
-  }
-  header .header-left nav {
-    margin: 0;
-    position: absolute;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: fit-content;
-    background-color: #0b2239;
-    padding: 30px;
-    transition: 0.3s;
-    text-align: center;
-    z-index: -1;
-  }
-  header .header-left nav.active {
-    top: 70px;
-  }
-  header .header-left nav ul {
-    display: block;
-  }
+.card:hover .icon-wrapper {
+  background-color: #4ad295;
+  color: #4ad295;
 }
-
-@media only screen and (max-width: 500px) {
-  nav .login-signup {
-    display: block;
-    margin-top: 20px;
+.card:hover h3 {
+  color: #ffffff;
+}
+.card:hover p {
+  color: #f0f0f0;
+}
+@media screen and (min-width: 768px) {
+  section {
+    padding: 0 2em;
   }
-  header .header-right .login-signup {
-    display: none;
+  .column {
+    flex: 0 50%;
+    max-width: 50%;
   }
 }
-
-@media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    min-height: 20vh;
+@media screen and (min-width: 992px) {
+  section {
+    padding: 1em 3em;
   }
-  .content1 {
-    width: 100%;
+  .column {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
   }
-  .content1 p {
-    font-size: 3rem;
-  }
-  .btn {
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .btn {
-    font-size: 14px;
-  }
-
-  .content1 p {
-    font-size: 2rem;
-  }
-
 }
