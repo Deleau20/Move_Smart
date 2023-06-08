@@ -1,13 +1,7 @@
-from flask_mongoengine import MongoEngine
+from mongoengine import Document, StringField
 
-db = MongoEngine()
-
-class User(db.Document):
-    username = db.StringField(required=True, unique=True)
-    password = db.StringField(required=True)
-
-    def to_json(self):
-        return {
-            'id': str(self.id),
-            'username': self.username
-        }
+class Utilisateur(Document):
+    prenom = StringField(required=True)
+    nom = StringField(required=True)
+    email = StringField(required=True)
+    mot_de_passe = StringField(required=True)

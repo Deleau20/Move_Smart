@@ -1,38 +1,28 @@
-from flask import Flask, render_template, request, redirect, url_for
-from models.incidents import Incident
-from utils.database import initialize_db
+from flask import Flask, request
+from mongoengine import connect, Document, StringField
+from models.user import Utilisateur
 
 app = Flask(__name__)
-app.config['MONGODB_SETTINGS'] = {
-    'db': 'your_database_name',
-    'host': 'your_database_host',
-    'port': 'your_database_port'
-}
+connect('votre_base_de_donnees')
 
-# Initialise la base de données
-initialize_db(app)
+@app.route('/inscription', methods=['POST'])
+def inscription():
+    try:
+        prenom = request.form['prenom']
+        nom = request.form['nom']
+        email = request.form['email']
+        mot_de_passe = request.form['mot_de_passe']
 
-@app.route('/')
-def index():
-    # Logique pour la page d'accueil
-    return render_template('index.html')
+        # Insérer les données dans la base de données
+        utilisateur = Utilisateur(prenom=prenom, nom=nom, email=email, mot_de_passe=mot_de_passe)
+        utilisateur.save()
 
-@app.route('/incident', methods=['GET', 'POST'])
-def incident():
-    if request.method == 'POST':
-        # Logique pour la soumission d'un incident
-        title = request.form['title']
-        description = request.form['description']
-        location = request.form['location']
-        user_id = request.form['user_id']
+        # Rediriger l'utilisateur vers une page de confirmation ou de succès
+        return 'Inscription réussie !'
 
-        incident = Incident(title=title, description=description, location=location, user_id=user_id)
-        incident.save()
+    except Exception as e:
+        # Gérer l'erreur ici, par exemple, afficher un message d'erreur ou rediriger vers une page d'erreur
+        return 'Une erreur s\'est produite lors de l\'inscription : ' + str(e)
 
-        return redirect(url_for('index'))
-
-    # Logique pour afficher le formulaire de signalement d'incident
-    return render_template('incident.html')
-
-if __name__ == '_main_':
+if __name__ == '__main__':
     app.run()

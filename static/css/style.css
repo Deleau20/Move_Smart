@@ -126,7 +126,6 @@ header .header-right .hamburger div {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .btn {
@@ -183,6 +182,23 @@ header .header-right .hamburger div {
 .btn:active {
   filter: brightness(0.7);
   transform: scale(0.98);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: #0b2239;
+  width: 100%;
+  height: 4rem;
+  margin-top: 17rem;
+  color: #f0f0f0;
+  text-align: center;
+  align-items: center;
+}
+
+footer span{
+  color: #4ad295;
+  font-size: 18px;
 }
 
 @media only screen and (max-width: 1000px) {

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Move_Smart</title>
     <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/accueil.css">
   </head>
 
   <body>
@@ -20,20 +21,25 @@
               <a href="#" class="active">Accueil</a>
             </li>
             <li>
-              <a href="../templates/about.html">À propos</a>
+              <a href="#">À propos</a>
             </li>
             <li>
               <a href="../templates/contact.html">Contactez-nous</a>
             </li>
+            <li>
+              <a href="#">Bienvenu Monsieur....</a>
+            </li>
           </ul>
           <div class="login-signup">
-            <a href="../templates/connexion.html">Connexion</a> ou <a href="../templates/inscription.html">Inscription</a>
+            <a href="../templates/connexion.html">Connexion</a> ou
+            <a href="../templates/inscription.html">Inscription</a>
           </div>
         </nav>
       </div>
       <div class="header-right">
         <div class="login-signup">
-          <a href="../templates/connexion.html">Connexion</a> ou <a href="../templates/inscription.html">Inscription</a>
+          <a href="../templates/connexion.html">Connexion</a> ou
+          <a href="../templates/inscription.html">Inscription</a>
         </div>
         <div class="hamburger">
           <div></div>
@@ -42,21 +48,20 @@
         </div>
       </div>
     </header>
+    <div class="containerss">
+      <form class="form">
+        <div class="title">Signaler un sinistre</div>
+        <input type="text" placeholder="Votre email" class="input" />
+        <textarea placeholder="Votre Message"></textarea>
 
-    <!-- Contenu de la page -->
-    <section class="">
-      <div class="container">
-        <div class="content1">
-          <p id="typing-text"></p>
-          <br />
-        </div>
-      </div>
-      <p class="slogan">Nous sommes avec vous dans vos voyages</p>
-      <div class="contentbtn"><button class="btn">Signaler</button></div>
-    </section>
+        <div class="contentbtn"><button class="btn">Signaler</button></div>
+      </form>
+    </div>
+
+    <!-- Pieds de page -->
     <footer>
       <h3>
-        Copyright © 2010-2023 <span> Move_</span>Smart. Tous les droits sont
+        Copyright © 2023 <span> Move_</span>Smart. Tous les droits sont
         réservés.
       </h3>
     </footer>
@@ -68,7 +73,5 @@
         nav.classList.toggle("active");
       };
     </script>
-
-    <script src="../static/js/main.js"></script>
   </body>
 </html>
