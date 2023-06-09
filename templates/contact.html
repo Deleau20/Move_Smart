@@ -1,53 +1,106 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Move_Smart</title>
-    <link rel="stylesheet" href="../static/css/style.css" />
-  </head>
 
-  <body>
-    <header>
-      <div class="header-left">
-        <div class="logo">
-          <p><span>Move_</span>Smart</p>
-        </div>
-        <nav>
-          <ul>
-            <li>
-              <a href="../templates/index.html">Accueil</a>
-            </li>
-            <li>
-              <a href="../templates/about.html">À propos</a>
-            </li>
-            <li>
-              <a href="#" class="active">Contactez-nous</a>
-            </li>
-          </ul>
-          <div class="login-signup">
-            <a href="">Connexion</a> ou <a href="">Inscription</a>
-          </div>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Move_Smart</title>
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="stylesheet" href="../static/css/contact.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <div class="logo">
+        <p><span>Move_</span>Smart</p>
       </div>
-      <div class="header-right">
+      <nav>
+        <ul>
+          <li>
+            <a href="../templates/index.html">Accueil</a>
+          </li>
+          <li>
+            <a href="../templates/about.html">À propos</a>
+          </li>
+          <li>
+            <a href="#" class="active">Contactez-nous</a>
+          </li>
+        </ul>
         <div class="login-signup">
           <a href="">Connexion</a> ou <a href="">Inscription</a>
         </div>
-        <div class="hamburger">
-          <div></div>
-          <div></div>
-          <div></div>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="login-signup">
+        <a href="">Connexion</a> ou <a href="">Inscription</a>
+      </div>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+  <div class="containerss">
+    <div class="container">
+      <div class="content">
+        <div class="left-side">
+          <div class="address details">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="topic">Addresse</div>
+            <div class="text-one">Côte d'ivoire</div>
+            <div class="text-two">Abidjan, Cocody</div>
+          </div>
+          <div class="phone details">
+            <i class="fas fa-phone-alt"></i>
+            <div class="topic">Numéro de téphone</div>
+            <div class="text-one">+225 077 749 221 2</div>
+            <div class="text-two">+225 077 749 221 2</div>
+          </div>
+          <div class="email details">
+            <i class="fas fa-envelope"></i>
+            <div class="topic">Email</div>
+            <div class="text-one">exemple@gmail.com</div>
+            <div class="text-two">fredkesse1234@gmail.com</div>
+          </div>
+        </div>
+        <div class="right-side">
+          <div class="topic-text">Laissez-nous un message</div>
+          <p>
+            Si vous avez une éventuelle question, vous pouvez nous la poser ici. <br>
+            Nous vous répondrons dans les plus brefs délais.
+          </p>
+          <form action="#">
+            <div class="input-box">
+              <input type="text" placeholder="Enter your name" />
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="Enter your email" />
+            </div>
+            <div class="input-box">
+              <label for="message">Message :</label>
+              <textarea id="message" name="message" required></textarea><br/><br/>
+            </div>
+            <div class="input-box message-box"></div>
+            <div class="button">
+              <input type="button" value="Envoyer" />
+            </div>
+          </form>
         </div>
       </div>
-    </header>
-    <script>
-      hamburger = document.querySelector(".hamburger");
-      nav = document.querySelector("nav");
-      hamburger.onclick = function () {
-        nav.classList.toggle("active");
-      };
-    </script>
-  </body>
+    </div>
+  </div>
+
+  <script>
+    hamburger = document.querySelector(".hamburger");
+    nav = document.querySelector("nav");
+    hamburger.onclick = function () {
+      nav.classList.toggle("active");
+    };
+  </script>
+</body>
+
 </html>
