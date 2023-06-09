@@ -1,28 +1,17 @@
-from flask import Flask, request
-from mongoengine import connect, Document, StringField
-from models.user import Utilisateur
+from flask import Flask
+from mongoengine import connect
+from routes.user import route_utilisateur
 
 app = Flask(__name__)
-connect('votre_base_de_donnees')
+# connect("mongodb+srv://fredkesse1234:9LTahJJoOYPUyn5T@cluster2.0zjv9er.mongodb.net")
+connect( db='Transport', username='user', password='9LTahJJoOYPUyn5T', host='mongodb://user:9LTahJJoOYPUyn5T@cluster2.0zjv9er.mongodb.net/transport')
 
-@app.route('/inscription', methods=['POST'])
-def inscription():
-    try:
-        prenom = request.form['prenom']
-        nom = request.form['nom']
-        email = request.form['email']
-        mot_de_passe = request.form['mot_de_passe']
+app.register_blueprint(route_utilisateur, url_prefix='/api/user')
 
-        # Insérer les données dans la base de données
-        utilisateur = Utilisateur(prenom=prenom, nom=nom, email=email, mot_de_passe=mot_de_passe)
-        utilisateur.save()
 
-        # Rediriger l'utilisateur vers une page de confirmation ou de succès
-        return 'Inscription réussie !'
-
-    except Exception as e:
-        # Gérer l'erreur ici, par exemple, afficher un message d'erreur ou rediriger vers une page d'erreur
-        return 'Une erreur s\'est produite lors de l\'inscription : ' + str(e)
+    
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
+
+
