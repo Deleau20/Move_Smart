@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Move_Smart</title>
-    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
   </head>
 
   <body>
@@ -17,10 +17,10 @@
         <nav>
           <ul>
             <li>
-              <a href="#" class="active">Accueil</a>
+              <a href="../templates/index.html" class="active">Accueil</a>
             </li>
             <li>
-              <a href="../templates/about.html">À propos</a>
+              <a href="{{url_for('user_router.accueil')}}">À propos</a>
             </li>
             <li>
               <a href="../templates/contact.html">Contactez-nous</a>
@@ -33,7 +33,7 @@
       </div>
       <div class="header-right">
         <div class="login-signup">
-          <a href="../templates/connexion.html">Connexion</a> ou <a href="../templates/inscription.html">Inscription</a>
+          <a href="{{url_for('inscription')}}">Connexion</a> ou <a href="../templates/inscription.html">Inscription</a>
         </div>
         <div class="hamburger">
           <div></div>
@@ -44,7 +44,7 @@
     </header>
 
     <!-- Contenu de la page -->
-    <section class="">
+    <section>
       <div class="container">
         <div class="content1">
           <p id="typing-text"></p>
@@ -69,6 +69,6 @@
       };
     </script>
 
-    <script src="../static/js/main.js"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
   </body>
 </html>
