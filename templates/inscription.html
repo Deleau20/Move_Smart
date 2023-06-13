@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/css/inscription.css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/inscription.css')}}" />
     <title>Move_Smart</title>
   </head>
   <body>
     <div class="containerss">
-      <form class="form">
+      <form action="inscription" class="form" method="post">
         <a href="../templates/index.html"><p class="retour">Retour</p></a>
         <p class="title">Inscription</p>
         <p class="message">
@@ -18,32 +19,32 @@
         </p>
         <div class="flex">
           <label>
-            <input required="" placeholder="" type="text" class="input" />
+            <input required="" placeholder="" type="text" class="input" name="prenom"/>
             <span>Prénom</span>
           </label>
 
           <label>
-            <input required="" placeholder="" type="text" class="input" />
+            <input required="" placeholder="" type="text" class="input" name="nom"/>
             <span>Nom</span>
           </label>
         </div>
 
         <label>
-          <input required="" placeholder="" type="email" class="input" />
+          <input required="" placeholder="" type="email" class="input" name="email"/>
           <span>Email</span>
         </label>
 
         <label>
-          <input required="" placeholder="" type="password" class="input" />
+          <input required="" placeholder="" type="password" class="input" name="mot_de_passe" />
           <span> Mot de passe</span>
         </label>
-        <label>
+        <!-- <label>
           <input required="" placeholder="" type="password" class="input" />
           <span>Confirmer le mot de passe</span>
-        </label>
-        <button class="submit">S'inscrire</button>
+        </label> -->
+        <a href="{{url_for('user_router.inscription')}}"><button type="submit" class="submit">S'inscrire</button></a>
         <p class="signin">
-          Vous avez déjà un compte ?<a href="../templates/connexion.html">Se connecter</a>
+          Vous avez déjà un compte ?<a href="{{url_for('user_router.showconnect')}}">Se connecter</a>
         </p>
       </form>
     </div>

@@ -17,23 +17,23 @@
         <nav>
           <ul>
             <li>
-              <a href="../templates/index.html" class="active">Accueil</a>
+              <a href="#" class="active">Accueil</a>
             </li>
             <li>
-              <a href="{{url_for('user_router.accueil')}}">À propos</a>
+              <a href="#">À propos</a>
             </li>
             <li>
-              <a href="../templates/contact.html">Contactez-nous</a>
+              <a href="#">Contactez-nous</a>
             </li>
           </ul>
           <div class="login-signup">
-            <a href="../templates/connexion.html">Connexion</a> ou <a href="../templates/inscription.html">Inscription</a>
+            <a href="{{url_for('user_router.showlogin')}}">Connexion</a> ou <a href="#">Inscription</a>
           </div>
         </nav>
       </div>
       <div class="header-right">
         <div class="login-signup">
-          <a href="{{url_for('inscription')}}">Connexion</a> ou <a href="../templates/inscription.html">Inscription</a>
+          <a href="{{url_for('user_router.showlogin')}}">Connexion</a> ou <a href="{{url_for('user_router.showconnect')}}">Inscription</a>
         </div>
         <div class="hamburger">
           <div></div>
