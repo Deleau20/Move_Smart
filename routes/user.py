@@ -24,7 +24,7 @@ def inscription():
         utilisateur = Utilisateur(prenom=prenom, nom=nom, email=email, mot_de_passe=mot_de_passe)
         print(utilisateur)
         utilisateur.save()      
-        return 'Inscription réussie !'
+        return render_template('accueil.html')
     except Exception as e:
         print(e)
         return e.__str__()
