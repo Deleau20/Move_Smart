@@ -89,6 +89,20 @@ header .header-right .hamburger div {
   background: #fff;
 }
 
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 10px;
+  min-width: 200px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 /* Contenu */
 
 .container{

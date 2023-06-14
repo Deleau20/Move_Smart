@@ -44,6 +44,10 @@ body {
   position: relative;
 }
 
+.flash-message {
+  color: red;
+}
+
 .title {
   font-size: 28px;
   color: #4ad295;

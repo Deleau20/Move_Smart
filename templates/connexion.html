@@ -6,32 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/connexion.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/connexion.css')}}" />
     <title>Move_Smart</title>
 </head>
 
 <body>
     <div class="containerss">
-        <form class="form">
-            <a href="../templates/index.html"><p class="retour">Retour</p></a>
+        <form action="connexion" class="form" method="post">
+            <div style="display: flex; justify-content: flex-end; align-items: center;">
+                <a href="javascript:history.go(-1)">
+                    <p class="retour" style="border-bottom: solid 1px royalblue;">Retour</p>
+                </a>
+                <a href="{{url_for('user_router.accueil')}}">
+                    <p class="retour" style="border-bottom: solid 1px royalblue; margin-left: 1rem;">
+                        Retour à l'accueil
+                    </p>
+                </a>
+            </div>
             <p class="title">Connexion</p>
             <p class="message">
                 Connectez-vous maintenant à notre
                 application.
             </p>
+
+            <!-- Ajout du bloc pour afficher les messages flash -->
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                <li class="flash-message">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+
             <label>
-                <input required="" placeholder="" type="email" class="input"/>
+                <input required="" placeholder="" type="email" class="input" name="email" />
                 <span>Email</span>
             </label>
 
             <label>
-                <input required="" placeholder="" type="password" class="input" />
+                <input required="" placeholder="" type="password" class="input" name="mot_de_passe" />
                 <span> Mot de passe</span>
             </label>
             <button class="submit">S'inscrire</button>
             <p class="signin">
-                Vous n'avez pas encore de compte ?<a href="../templates/inscription.html">S'inscrire</a>
+                Vous n'avez pas encore de compte ?<a href="{{url_for('user_router.showlogin')}}">S'inscrire</a>
             </p>
         </form>
+    </div>
 </body>
 
 </html>

@@ -44,6 +44,15 @@ body {
   position: relative;
 }
 
+/* Style pour les messages d'erreur */
+.flash-message {
+  color: red;
+}
+
+/* Autres styles pour les messages flash */
+/* ... */
+
+
 .title {
   font-size: 28px;
   color: #4ad295;
