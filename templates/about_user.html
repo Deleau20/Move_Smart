@@ -21,7 +21,7 @@
       <nav>
         <ul>
           <li>
-            <a href="{{url_for('user_router.accueil')}}">Accueil</a>
+            <a href="{{url_for('user_router.accueilU')}}">Accueil</a>
           </li>
           <li>
             <a href="#" class="active">À propos</a>
@@ -29,23 +29,23 @@
           <li class="dropdowns">
             <a href="#" class="dropdowns-toggle">Alerte</a>
             <ul class="dropdowns-menu">
-              <li><a href="#">Voir les alertes</a></li>
-              <li><a href="{{url_for('user_router.showconnect')}}">Ajouter une alerte</a></li>
+              <li><a href="{{url_for('user_router.incidentsU')}}">Voir les alertes</a></li>
+              <li><a href="{{url_for('user_router.alertU')}}">Ajouter une alerte</a></li>
             </ul>
           </li>
           <li>
-            <a href="{{url_for('user_router.contact')}}">Contactez-nous</a>
+            <a href="{{url_for('user_router.contactU')}}">Contactez-nous</a>
           </li>
         </ul>
         <div class="login-signup">
-          <a href="{{url_for('user_router.showconnect')}}">Connexion</a> ou <a href="{{url_for('user_router.showlogin')}}">Inscription</a>
-        </div>
+            <a href="{{url_for('user_router.deconnexion')}}">Déconnexion</a>
+          </div>
       </nav>
     </div>
     <div class="header-right">
-      <div class="login-signup">
-        <a href="{{url_for('user_router.showconnect')}}">Connexion</a> ou <a href="{{url_for('user_router.showlogin')}}">Inscription</a>
-      </div>
+        <div class="login-signup">
+            <a href="{{url_for('user_router.deconnexion')}}">Déconnexion</a>
+          </div>
       <div class="hamburger">
         <div></div>
         <div></div>
