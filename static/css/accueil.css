@@ -10,14 +10,27 @@
 
 body{
     width: 100%;
+}
 
+.dropdowns-menu{
+  display: none;
+  position: absolute;
+  background-color: #0b2239;
+  border: 1px solid #ddd;
+  color: wheat;
+  padding: 10px;
+  margin-top: 10px;
+  min-width: 200px;
+}
+
+.dropdowns:hover .dropdowns-menu {
+  display: block;
 }
 
 .containerss{
     display: flex;
     justify-content: center;
     width: 100%;
-    border: 1px red solid;
     margin-top: 21.5rem;
 }
 

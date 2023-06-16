@@ -10,6 +10,22 @@
 
 body{
     width: 100%;
+    background-image: url(../img/accident1.jpg);
+}
+
+.dropdowns-menu{
+  display: none;
+  position: absolute;
+  background-color: #0b2239;
+  border: 1px solid #ddd;
+  color: wheat;
+  padding: 10px;
+  margin-top: 10px;
+  min-width: 200px;
+}
+
+.dropdowns:hover .dropdowns-menu {
+  display: block;
 }
 
 .containerss{

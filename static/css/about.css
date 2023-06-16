@@ -9,7 +9,7 @@
 }
 
 body {
-  background-image: url(../img/accident1.jpg);
+  background-image: url(../img/feu.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -87,6 +87,21 @@ header .header-right .hamburger div {
   height: 2px;
   margin: 6px 0;
   background: #fff;
+}
+
+.dropdowns-menu{
+  display: none;
+  position: absolute;
+  background-color: #0b2239;
+  border: 1px solid #ddd;
+  color: wheat;
+  padding: 10px;
+  margin-top: 10px;
+  min-width: 200px;
+}
+
+.dropdowns:hover .dropdowns-menu {
+  display: block;
 }
 
 /* Contenu */
