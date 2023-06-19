@@ -81,7 +81,6 @@ def inscription():
 
 @route_utilisateur.route('/showconnect', methods=['GET'])
 def showconnect():
-    print("Connect :", session.get('user_id'))
     return render_template('connexion.html')
 
 
@@ -108,57 +107,31 @@ def connexion():
 
 @route_utilisateur.route('/accueilU', methods=['GET'])
 def accueilU():
-    if not session.get('user_id'):
-        return redirect(url_for('user_router.showconnect'))
-    if get_current_user():
-        user = get_current_user()
-        return render_template("accueil_user.html")
-    else:
-        return redirect(url_for('user_router.showconnect'))
+    return render_template('accueil_user.html')
 
 
 @route_utilisateur.route('/aboutU', methods=['GET'])
 def aboutU():
-    if get_current_user():
-        user = get_current_user()
-        return render_template('about_user.html')
-    else:
-        return redirect(url_for('user_router.showconnect'))
-    
+    return render_template('about_user.html')
 
 
 @route_utilisateur.route('/alertU', methods=['GET'])
 def alertU():
-    if get_current_user():
-        user = get_current_user()
-        return render_template('alert_user.html')
-    else:
-        return redirect(url_for('user_router.showconnect'))
-    
+    return render_template('alert_user.html')
 
 
 @route_utilisateur.route('/incidentsU', methods=['GET'])
 def incidentsU():
-    if get_current_user():
-        user = get_current_user()
-        return render_template('incidents_user.html')
-    else:
-        return redirect(url_for('user_router.showconnect'))
+    return render_template('incidents_user.html')
 
 
 @route_utilisateur.route('/contactU', methods=['GET'])
 def contactU():
-        if get_current_user():
-            user = get_current_user()
-            return render_template('contact_user.html')
-        else:
-            return redirect(url_for('user_router.showconnect'))
-    
+    return render_template('contact_user.html')
 
 
 @route_utilisateur.route('/deconnexion', methods=['GET'])
 def deconnexion():
-    print("Deconnexion :", session.get('user_id'))
     session.pop('user_id', None)
     flash('Vous avez été déconnecté.', 'success')
     return redirect(url_for('user_router.showconnect'))

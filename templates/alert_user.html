@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'Alerte</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/alerte.css') }}">
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"> -->
+</head>
+
+<body>
+    
+    <div class="container">
+        <form id="form" class="topBefore">
+            <h2>Formulaire d'Alerte</h2>
+            <textarea id="message" type="text" placeholder="DESCRIPTION DE L'ALERTE"></textarea>
+            <input id="image" type="file" accept="image/* " placeholder="Ajoutez ou Prenez une photo de l'alerte">
+            <input id="location" type="text" placeholder="LOCALISATION DE L'ALERTE">
+            <input id="title" type="text" placeholder="TITRE DE L'ALERTE">
+            <input id="submit" type="submit" value="ENVOYER">
+        </form>
+        
+    </div>
+</body>
+
+
+</html>

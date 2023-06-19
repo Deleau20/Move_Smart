@@ -1,9 +1,7 @@
-from mongoengine import Document, StringField, EmailField, ReferenceField,ListField
+from mongoengine import Document, StringField
 
-class User(Document):
-    nom = StringField(required=True)
+class Administrateur(Document):
     prenom = StringField(required=True)
-    email = EmailField(required=True, unique=True)
-    mdp = StringField(required=True)
-    role = StringField(required=False, default='user')
-    user_name = StringField(required=True, unique=True)
+    nom = StringField(required=True)
+    email = StringField(required=True, unique=True)
+    mot_de_passe = StringField(required=True)
