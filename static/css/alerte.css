@@ -22,3 +22,13 @@
   align-items: center;
   border: 2px solid red;
 }
+
+.inputimg{
+  background-color: aliceblue;
+}
+
+.loca{
+  background-color: aliceblue;
+  border-radius: 20px;
+  padding: 0.5rem;
+}

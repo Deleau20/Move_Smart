@@ -54,7 +54,7 @@
     </header>
 
     <div class="containerss">
-        <form action="" class="form" method="post">
+        <form action="" class="form" method="post" id="locationForm">
             <div style="display: flex; justify-content: flex-end; align-items: center;">
             </div>
             <p class="title">Formulaire d'alerte</p>
@@ -74,18 +74,32 @@
             {% endwith %}
 
             <label>
-                <input required="" placeholder="" type="email" class="input" name="email" />
+                <input required="" placeholder="" type="text" class="input" name="nom" />
+                <span>Votre Nom</span>
+            </label>
+
+            <label>
+                <input required="" placeholder="" type="text" class="input" name="prenom" />
+                <span>Votre Prenom</span>
+            </label>
+
+            <label>
+                <input required="" placeholder="" type="text" class="input" name="titre" />
                 <span>Titre de l'alerte, Accident, vol de véhicule...</span>
             </label>
 
             <label>
-                <input required="" placeholder="" type="password" class="input" name="mot_de_passe" />
+                <input required="" placeholder="" type="text" class="input" name="description" />
                 <span>Description de l'alerte</span>
             </label>
 
             <label>
-                <input required="" placeholder="" type="password" class="input" name="mot_de_passe" />
-                <span>Description de l'alerte</span>
+                <input required="" placeholder="Ajoutez une image" type="file" class="inputimg" name="image" />
+            </label>
+
+            <label>
+                <input type="text" id="userName" name="userName" required>
+                <span class="loca">Donner votre la localisation<span>
             </label>
             <button class="submit">Se connecter</button>
         </form>
@@ -124,5 +138,32 @@
     });
 </script>
 
+<script>
+    document.getElementById("locationForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Empêche le formulaire de se soumettre normalement
 
+    // Vérifiez si le navigateur prend en charge la géolocalisation
+    if (navigator.geolocation) {
+      // Demande la position de l'utilisateur
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        // Récupérez les autres données du formulaire
+        var userName = document.getElementById("userName").value;
+
+        // Faites quelque chose avec la localisation et les autres données
+        // Vous pouvez les envoyer à un serveur ou les traiter localement
+
+        console.log("Nom de l'utilisateur :", userName);
+        console.log("Latitude :", latitude);
+        console.log("Longitude :", longitude);
+      }, function(error) {
+        console.log("Erreur de géolocalisation :", error.message);
+      });
+    } else {
+      console.log("La géolocalisation n'est pas prise en charge par ce navigateur.");
+    }
+  });
+</script>
 </html>
