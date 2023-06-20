@@ -7,23 +7,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire d'Alerte</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/alerte.css') }}">
-    <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"> -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/connexion.css')}}">
 </head>
 
-<body>
-    
-    <div class="container">
-        <form id="form" class="topBefore">
-            <h2>Formulaire d'Alerte</h2>
-            <textarea id="message" type="text" placeholder="DESCRIPTION DE L'ALERTE"></textarea>
-            <input id="image" type="file" accept="image/* " placeholder="Ajoutez ou Prenez une photo de l'alerte">
-            <input id="location" type="text" placeholder="LOCALISATION DE L'ALERTE">
-            <input id="title" type="text" placeholder="TITRE DE L'ALERTE">
-            <input id="submit" type="submit" value="ENVOYER">
+<body class="body">
+    <header>
+        <div class="header-left">
+            <div class="logo">
+                <p><span>Move_</span>Smart</p>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{url_for('user_router.accueilU')}}">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('user_router.aboutU')}}">À propos</a>
+                    </li>
+                    <li class="dropdowns">
+                        <a href="#" class="dropdowns-toggle">Alerte</a>
+                        <ul class="dropdowns-menu">
+                            <li><a href="{{url_for('user_router.incidentsU')}}">Voir les alertes</a></li>
+                            <li><a href="#" class="active">Ajouter une alerte</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{{url_for('user_router.contactU')}}">Contactez-nous</a>
+                    </li>
+                </ul>
+                <div class="login-signup">
+                    <a href="{{url_for('user_router.deconnexion')}}">Déconnexion</a>
+                </div>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="login-signup">
+                <a href="{{url_for('user_router.deconnexion')}}">Déconnexion</a>
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="containerss">
+        <form action="" class="form" method="post">
+            <div style="display: flex; justify-content: flex-end; align-items: center;">
+            </div>
+            <p class="title">Formulaire d'alerte</p>
+            <p class="message">
+                Détaillez l'alerte au travers de ce formulaire
+            </p>
+
+            <!-- Ajout du bloc pour afficher les messages flash -->
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                <li class="flash-message">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+
+            <label>
+                <input required="" placeholder="" type="email" class="input" name="email" />
+                <span>Titre de l'alerte, Accident, vol de véhicule...</span>
+            </label>
+
+            <label>
+                <input required="" placeholder="" type="password" class="input" name="mot_de_passe" />
+                <span>Description de l'alerte</span>
+            </label>
+
+            <label>
+                <input required="" placeholder="" type="password" class="input" name="mot_de_passe" />
+                <span>Description de l'alerte</span>
+            </label>
+            <button class="submit">Se connecter</button>
         </form>
-        
     </div>
 </body>
+
+<script>
+    hamburger = document.querySelector(".hamburger");
+    nav = document.querySelector("nav");
+    hamburger.onclick = function () {
+        nav.classList.toggle("active");
+    };
+
+    // Récupérer l'élément du lien du menu déroulant
+    var dropdownToggle = document.querySelector('.dropdowns-toggle');
+
+    // Récupérer l'élément du menu déroulant
+    var dropdownMenu = document.querySelector('.dropdowns-menu');
+
+    // Cacher le menu déroulant par défaut
+    dropdownMenu.style.display = 'none';
+
+    // Ajouter un gestionnaire d'événement pour le clic sur le lien du menu déroulant
+    dropdownToggle.addEventListener('click', function (event) {
+        event.preventDefault(); // Empêcher le comportement par défaut du lien
+
+        // Vérifier si le menu déroulant est déjà affiché ou non
+        var isDropdownVisible = dropdownMenu.style.display === 'block';
+
+        // Afficher ou masquer le menu déroulant en fonction de son état actuel
+        if (isDropdownVisible) {
+            dropdownMenu.style.display = 'none';
+        } else {
+            dropdownMenu.style.display = 'block';
+        }
+    });
+</script>
 
 
 </html>
