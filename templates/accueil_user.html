@@ -1,104 +1,108 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Move_Smart</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
-  </head>
 
-  <body>
-    <header>
-      <div class="header-left">
-        <div class="logo">
-          <p><span>Move_</span>Smart</p>
-        </div>
-        <nav>
-          <ul>
-            <li>
-              <a href="#" class="active">Accueil</a>
-            </li>
-            <li>
-              <a href="{{url_for('user_router.aboutU')}}">À propos</a>
-            </li>
-            <li class="dropdowns">
-              <a href="#" class="dropdowns-toggle">Alerte</a>
-              <ul class="dropdowns-menu">
-                <li><a href="{{url_for('user_router.incidentsU')}}">Voir les alertes</a></li>
-                <li><a href="{{url_for('user_router.alertU')}}">Ajouter une alerte</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="{{url_for('user_router.contactU')}}">Contactez-nous</a>
-            </li>
-          </ul>
-          <div class="login-signup">
-            <a href="{{url_for('user_router.deconnexion')}}">Déconnexion</a>
-          </div>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Move_Smart</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <div class="logo">
+        <p><span>Move_</span>Smart</p>
       </div>
-      <div class="header-right">
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="active">Accueil</a>
+          </li>
+          <li>
+            <a href="{{url_for('user_router.aboutU')}}">À propos</a>
+          </li>
+          <li class="dropdowns">
+            <a href="#" class="dropdowns-toggle">Alerte</a>
+            <ul class="dropdowns-menu">
+              <li><a href="{{url_for('user_router.incidentsU')}}">Voir les alertes</a></li>
+              <li><a href="{{url_for('user_router.alertU')}}">Ajouter une alerte</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{{url_for('user_router.contactU')}}">Contactez-nous</a>
+          </li>
+        </ul>
+
         <div class="login-signup">
           <a href="{{url_for('user_router.deconnexion')}}">Déconnexion</a>
+
         </div>
-        <div class="hamburger">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="login-signup">
+        <a href="{{url_for('user_router.deconnexion')}}">Déconnexion</a>
       </div>
-    </header>
-
-    <!-- Contenu de la page -->
-    <section>
-      <div class="container">
-        <div class="content1">
-          <p id="typing-text"></p>
-          <br />
-        </div>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-      <p class="slogan">Nous sommes avec vous dans vos voyages</p>
-      <div class="contentbtn"><a href="{{url_for('user_router.alertU')}}"><button class="btn">Signaler</button></a></div>
-    </section>
-    <footer>
-      <h3>
-        Copyright © 2010-2023 <span> Move_</span>Smart. Tous les droits sont
-        réservés.
-      </h3>
-    </footer>
+    </div>
+  </header>
 
-    <script>
-      hamburger = document.querySelector(".hamburger");
-      nav = document.querySelector("nav");
-      hamburger.onclick = function () {
-        nav.classList.toggle("active");
-      };
-      // Récupérer l'élément du lien du menu déroulant
-var dropdownToggle = document.querySelector('.dropdowns-toggle');
+  <!-- Contenu de la page -->
+  <section>
+    <div class="container">
+      <div class="content1">
+        <p id="typing-text"></p>
+        <br />
+      </div>
+    </div>
+    <p class="slogan">Nous sommes avec vous dans vos voyages</p>
+    <div class="contentbtn"><a href="{{url_for('user_router.alertU')}}"><button class="btn">Signaler</button></a></div>
+  </section>
+  <footer>
+    <h3>
+      Copyright © 2010-2023 <span> Move_</span>Smart. Tous les droits sont
+      réservés.
+    </h3>
+  </footer>
 
-// Récupérer l'élément du menu déroulant
-var dropdownMenu = document.querySelector('.dropdowns-menu');
+  <script>
+    hamburger = document.querySelector(".hamburger");
+    nav = document.querySelector("nav");
+    hamburger.onclick = function () {
+      nav.classList.toggle("active");
+    };
+    // Récupérer l'élément du lien du menu déroulant
+    var dropdownToggle = document.querySelector('.dropdowns-toggle');
 
-// Cacher le menu déroulant par défaut
-dropdownMenu.style.display = 'none';
+    // Récupérer l'élément du menu déroulant
+    var dropdownMenu = document.querySelector('.dropdowns-menu');
 
-// Ajouter un gestionnaire d'événement pour le clic sur le lien du menu déroulant
-dropdownToggle.addEventListener('click', function(event) {
-  event.preventDefault(); // Empêcher le comportement par défaut du lien
-
-  // Vérifier si le menu déroulant est déjà affiché ou non
-  var isDropdownVisible = dropdownMenu.style.display === 'block';
-
-  // Afficher ou masquer le menu déroulant en fonction de son état actuel
-  if (isDropdownVisible) {
+    // Cacher le menu déroulant par défaut
     dropdownMenu.style.display = 'none';
-  } else {
-    dropdownMenu.style.display = 'block';
-  }
-});
-    </script>
 
-    <script src="{{url_for('static', filename='js/main.js')}}"></script>
-  </body>
+    // Ajouter un gestionnaire d'événement pour le clic sur le lien du menu déroulant
+    dropdownToggle.addEventListener('click', function (event) {
+      event.preventDefault(); // Empêcher le comportement par défaut du lien
+
+      // Vérifier si le menu déroulant est déjà affiché ou non
+      var isDropdownVisible = dropdownMenu.style.display === 'block';
+
+      // Afficher ou masquer le menu déroulant en fonction de son état actuel
+      if (isDropdownVisible) {
+        dropdownMenu.style.display = 'none';
+      } else {
+        dropdownMenu.style.display = 'block';
+      }
+    });
+  </script>
+
+  <script src="{{url_for('static', filename='js/main.js')}}"></script>
+</body>
+
 </html>

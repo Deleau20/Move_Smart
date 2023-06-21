@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des alertes</title>
+</head>
+<body>
+    <h1>Liste des alertes</h1>
+
+    <ul>
+    {% for alerte in alertes %}
+        <li>
+            <strong>Prenom:</strong> {{ alerte.prenom }}<br>
+            <strong>Nom:</strong> {{ alerte.nom }}<br>
+            <strong>Image:</strong> {% if alerte.image %}
+            <img src="{{ url_for('alerte_router.image', id=alerte.id) }}" alt="Image">
+            {% else %}
+                Aucune image
+            {% endif %}<br>
+            <strong>Localisation:</strong> {{ alerte.localisation }}<br>
+            <strong>Titre:</strong> {{ alerte.titre }}<br>
+            <strong>Description:</strong> {{ alerte.description }}<br>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

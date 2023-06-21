@@ -1,4 +1,4 @@
-from mongoengine import Document, StringField
+from mongoengine import Document, StringField, ImageField, PointField
 
 class Utilisateur(Document):
     prenom = StringField(required=True)

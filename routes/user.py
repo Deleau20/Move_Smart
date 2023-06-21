@@ -137,6 +137,8 @@ def deconnexion():
     return redirect(url_for('user_router.showconnect'))
 
 
+
+
 app.register_blueprint(route_utilisateur)
 
 if __name__ == '__main__':

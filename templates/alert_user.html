@@ -28,7 +28,7 @@
                     <li class="dropdowns">
                         <a href="#" class="dropdowns-toggle">Alerte</a>
                         <ul class="dropdowns-menu">
-                            <li><a href="{{url_for('user_router.incidentsU')}}">Voir les alertes</a></li>
+                            <li><a href="{{url_for('alerte_router.liste_alertes')}}">Voir les alertes</a></li>
                             <li><a href="#" class="active">Ajouter une alerte</a></li>
                         </ul>
                     </li>
@@ -54,14 +54,14 @@
     </header>
 
     <div class="containerss">
-        <form action="" class="form" method="post" id="locationForm">
+        <form action="/ajouter_alerte" class="form" method="post" id="locationForm" enctype="multipart/form-data">
             <div style="display: flex; justify-content: flex-end; align-items: center;">
             </div>
             <p class="title">Formulaire d'alerte</p>
             <p class="message">
                 Détaillez l'alerte au travers de ce formulaire
             </p>
-
+    
             <!-- Ajout du bloc pour afficher les messages flash -->
             {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -72,38 +72,38 @@
             </ul>
             {% endif %}
             {% endwith %}
-
+    
             <label>
                 <input required="" placeholder="" type="text" class="input" name="nom" />
                 <span>Votre Nom</span>
             </label>
-
+    
             <label>
                 <input required="" placeholder="" type="text" class="input" name="prenom" />
                 <span>Votre Prenom</span>
             </label>
-
+    
             <label>
                 <input required="" placeholder="" type="text" class="input" name="titre" />
                 <span>Titre de l'alerte, Accident, vol de véhicule...</span>
             </label>
-
+    
             <label>
                 <input required="" placeholder="" type="text" class="input" name="description" />
                 <span>Description de l'alerte</span>
             </label>
-
+    
             <label>
                 <input required="" placeholder="Ajoutez une image" type="file" class="inputimg" name="image" />
             </label>
-
+    
             <label>
-                <input type="text" id="userName" name="userName" required>
-                <span class="loca">Donner votre la localisation<span>
+                <input type="text" id="localisation" name="localisation" placeholder="Localisation" required>
             </label>
-            <button class="submit">Se connecter</button>
+            <button type="submit" class="submit">Se connecter</button>
         </form>
     </div>
+    
 </body>
 
 <script>
@@ -138,7 +138,7 @@
     });
 </script>
 
-<script>
+<!-- <script>
     document.getElementById("locationForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Empêche le formulaire de se soumettre normalement
 
@@ -165,5 +165,5 @@
       console.log("La géolocalisation n'est pas prise en charge par ce navigateur.");
     }
   });
-</script>
+</script> -->
 </html>
