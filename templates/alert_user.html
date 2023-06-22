@@ -61,7 +61,7 @@
             <p class="message">
                 Détaillez l'alerte au travers de ce formulaire
             </p>
-    
+
             <!-- Ajout du bloc pour afficher les messages flash -->
             {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -72,38 +72,45 @@
             </ul>
             {% endif %}
             {% endwith %}
-    
+
             <label>
                 <input required="" placeholder="" type="text" class="input" name="nom" />
                 <span>Votre Nom</span>
             </label>
-    
+
             <label>
                 <input required="" placeholder="" type="text" class="input" name="prenom" />
                 <span>Votre Prenom</span>
             </label>
-    
+
             <label>
                 <input required="" placeholder="" type="text" class="input" name="titre" />
                 <span>Titre de l'alerte, Accident, vol de véhicule...</span>
             </label>
-    
+
             <label>
                 <input required="" placeholder="" type="text" class="input" name="description" />
                 <span>Description de l'alerte</span>
             </label>
-    
+
             <label>
                 <input required="" placeholder="Ajoutez une image" type="file" class="inputimg" name="image" />
             </label>
-    
+
             <label>
                 <input type="text" id="localisation" name="localisation" placeholder="Localisation" required>
             </label>
             <button type="submit" class="submit">Se connecter</button>
         </form>
     </div>
-    
+
+    <footer>
+        <h3>
+            Copyright © 2010-2023 <span> Move_</span>Smart. Tous les droits sont
+            réservés.
+        </h3>
+    </footer>
+
 </body>
 
 <script>
@@ -166,4 +173,5 @@
     }
   });
 </script> -->
+
 </html>

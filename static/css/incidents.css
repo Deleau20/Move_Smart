@@ -1,0 +1,18 @@
+.arriere{
+    background-image: url(../img/alerte.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container-card{
+    background-color: #fff;
+    border-radius: 10px;
+    width: 30%;
+    margin-top: 4rem;
+    margin-left: 10rem;
+}
+
+.pied{
+    margin-top: 48rem;
+}
