@@ -28,7 +28,7 @@
                     <li class="dropdowns">
                         <a href="#" class="dropdowns-toggle">Alerte</a>
                         <ul class="dropdowns-menu">
-                            <li><a href="{{url_for('alerte_router.liste_alertes')}}">Voir les alertes</a></li>
+                            <li><a href="{{url_for('alerte_router.ajouter_alerte')}}">Voir les alertes</a></li>
                             <li><a href="#" class="active">Ajouter une alerte</a></li>
                         </ul>
                     </li>
@@ -100,7 +100,7 @@
             <label>
                 <input type="text" id="localisation" name="localisation" placeholder="Localisation" required>
             </label>
-            <button type="submit" class="submit">Se connecter</button>
+            <button type="submit" class="submit" value=Upload>Se connecter</button>
         </form>
     </div>
 

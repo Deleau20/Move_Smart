@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
     <link rel="stylesheet" href="{{url_for('static', filename='css/incidents.css')}}" />
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-    // Add the new slick-theme.css if you want the default styling
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
         integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
@@ -48,7 +47,7 @@
                 </div>
             </nav>
         </div>
-        <div class="header-right">
+        <div class="header-right"> <a href="../static/img/6993820_600.jpg"></a>
             <div class="login-signup">
                 <a href="{{url_for('user_router.deconnexion')}}">Déconnexion</a>
             </div>
@@ -62,22 +61,74 @@
 
     <!-- Contenu de la page -->
 
-    <ul>
-        <div class="container-card">
-            <h1>Liste des alertes</h1>
-            <li>
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Incident 1</h2>
-                    </div>
+    <section class="articles">
+        <article>
+            <div class="article-wrapper">
+                <figure>
+                    <img src="https://picsum.photos/id/1011/800/450" alt="" />
+                </figure>
+                <div class="article-body">
+                    <h2>{{ incident['titre'] }}</h2>
+                    <p>{{ incident['description'] }}</p>
+                    <img src="{{ url_for('user_router.uploaded_file', filename=incident['image']) }}" alt="Incident Image">
+                    <a href="#" class="read-more">
+                        Read more <span class="sr-only">about {{ incident['titre'] }}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+                
+                
+            </div>
+        </article>
+        <article>
 
-                    <div class="autoplay">
-                        <img src="../static/img/alerte.jpg" alt="">
-                        <img src="../static/img/alerte.jpg" alt="">
-                        <img src="../static/img/alerte.jpg" alt="">
-                        <img src="../static/img/alerte.jpg" alt="">
-                    </div>
-    </ul>
+            <div class="article-wrapper">
+                <figure>
+                    <img src="https://picsum.photos/id/1005/800/450" alt="" />
+                </figure>
+                <div class="article-body">
+                    <h2>This is some title</h2>
+                    <p>
+                        Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue
+                        bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+                    </p>
+                    <a href="#" class="read-more">
+                        Read more <span class="sr-only">about this is some title</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+        <article>
+
+            <div class="article-wrapper">
+                <figure>
+                    <img src="https://picsum.photos/id/103/800/450" alt="" />
+                </figure>
+                <div class="article-body">
+                    <h2>This is some title</h2>
+                    <p>
+                        Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue
+                        bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+                    </p>
+                    <a href="#" class="read-more">
+                        Read more <span class="sr-only">about this is some title</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </section>
 
     <!-- End contenu -->
     <footer class="pied">
