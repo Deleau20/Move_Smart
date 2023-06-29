@@ -28,7 +28,7 @@
                     <li class="dropdowns">
                         <a href="#" class="dropdowns-toggle">Alerte</a>
                         <ul class="dropdowns-menu">
-                            <li><a href="{{url_for('alerte_router.ajouter_alerte')}}">Voir les alertes</a></li>
+                            <li><a href="{{url_for('alerte_router.liste_alertes')}}">Voir les alertes</a></li>
                             <li><a href="#" class="active">Ajouter une alerte</a></li>
                         </ul>
                     </li>
@@ -93,9 +93,9 @@
                 <span>Description de l'alerte</span>
             </label>
 
-            <label>
+            <!-- <label>
                 <input required="" placeholder="Ajoutez une image" type="file" class="inputimg" name="image" />
-            </label>
+            </label> -->
 
             <label>
                 <input type="text" id="localisation" name="localisation" placeholder="Localisation" required>
