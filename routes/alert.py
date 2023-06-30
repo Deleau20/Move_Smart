@@ -16,6 +16,7 @@ def ajouter_alerte():
         prenom = request.form['prenom']
         nom = request.form['nom']
         localisation = request.form.get('localisation')
+        image = request.form.get('image')
         titre = request.form['titre']
         description = request.form['description']
 
@@ -23,6 +24,7 @@ def ajouter_alerte():
             prenom=prenom,
             nom=nom,
             localisation=localisation,
+            image=image,
             titre=titre,
             description=description
         )
@@ -38,7 +40,7 @@ def ajouter_alerte():
 @alerte_router.route('/alert')
 def liste_alertes():
     alertes = Alerte.objects()
-    return render_template('incidents_user.html')
+    return render_template('incidents_user.html', alertes=alertes)
 
 
 app.register_blueprint(alerte_router)
